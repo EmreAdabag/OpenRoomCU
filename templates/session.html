@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CUOpenRoom</title>
+    </head>
+    <style>
+        ul{
+            padding-left: 2rem;
+            list-style-type:"\1F44D";
+        }
+        #lookup{
+            margin:auto;
+            width:35%;
+        }
+    </style>
+<body>
+<div>
+    <h3 style = "text-align:center;">find empty rooms today:</h3>
+    <form id="lookup" method="POST">
+        <div>
+          <label for="start-time">Start time:</label>
+          <input type="time" name="start-time" id="start" required>
+          <label for="start-time">End time:</label>
+          <input type="time" name="end-time" id="end" required>
+          <button>find open rooms</button>
+        </div>
+    </form>
+    <div>
+        <p style = "text-align: center; color: red;">
+            {{message}}
+        </p>
+    </div>
+        <div>
+        <ul id="results">
+            {% for entry in results %}
+            <li>{{entry[0]}}</li>
+            {% endfor %}
+        </ul>
+        </div>
+</div>
+</body>
+</html>
+
+
+
